@@ -17,6 +17,11 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ message: 'API is live' });
 });
 
+//Authentication Route
+const authRoutes = require("./routes/authRoutes");
+app.use("/api", authRoutes);
+
+
 //Server listen
 const PORT = 5000;
 app.listen(PORT, () => {
